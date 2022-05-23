@@ -1,15 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Seiji Yoshino（ヨシノセイジ）Official Web Site`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `1998年生まれ Webエンジニア 
+      早稲田大学社会科学部を卒業 カナダでの留学を経て、自分の手で世界中に価値を届けられるエンジニアに興味を持ち、独学でプログラミングを習得。`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
   },
   plugins: [
     `gatsby-plugin-image`,
