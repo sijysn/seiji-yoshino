@@ -18,5 +18,5 @@ export const Layout = ({ location, title, children }) => {
 }
 
 const Content = styled.div`
-  padding-top: 50px;
+  padding-top: 150px;
 `

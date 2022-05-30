@@ -12,6 +12,9 @@ export const Header = () => {
         <NavItem>
           <Icon icon="fa-brands fa-twitter" />
         </NavItem>
+        <NavItem>
+          <Icon icon="fa-brands fa-facebook" />
+        </NavItem>
       </NavBar>
     </Wrapper>
   )
@@ -20,14 +23,15 @@ export const Header = () => {
 const Wrapper = styled.header`
   position: fixed;
   top: 50px;
-  width: 100%;
+  right: 0;
+  z-index: 100;
 `
 
 const NavBar = styled.ul`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 4px;
+  padding: 4px 50px 4px 4px;
 `
 
 const NavItem = styled.li`

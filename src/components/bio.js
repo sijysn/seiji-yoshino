@@ -8,6 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -30,24 +31,31 @@ const Bio = () => {
   const author = data.site.siteMetadata?.author
 
   return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile1.jpg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
+    <Wrapper>
       {author?.name && (
         <p>
           <strong>{author.name}</strong> {author?.summary || null}
         </p>
       )}
-    </div>
+      <StaticImage
+        formats={["auto", "webp", "avif"]}
+        src="../images/profile1.jpg"
+        quality={95}
+        alt="Profile picture"
+        imgStyle={{
+          width: "100%",
+          objectFit: "contain",
+        }}
+      />
+    </Wrapper>
   )
 }
 
 export default Bio
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
