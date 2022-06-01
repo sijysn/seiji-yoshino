@@ -5,17 +5,37 @@ import { Icon } from "./Icon"
 export const Header = () => {
   return (
     <Wrapper>
-      <NavBar>
-        <NavItem>ABOUT</NavItem>
-        <NavItem>WORK</NavItem>
-        <NavItem>BLOG</NavItem>
-        <NavItem>
-          <Icon icon="fa-brands fa-twitter" />
-        </NavItem>
-        <NavItem>
-          <Icon icon="fa-brands fa-facebook" />
-        </NavItem>
-      </NavBar>
+      <nav>
+        <NavList>
+          <NavItem>
+            <Link href="/#about">ABOUT</Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/#work">WORK</Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/#blog">BLOG</Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              href="https://twitter.com/yoshino_seiji"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon icon="fa-brands fa-twitter" />
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              href="https://www.facebook.com/seiji.yoshino.25"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon icon="fa-brands fa-facebook" />
+            </Link>
+          </NavItem>
+        </NavList>
+      </nav>
     </Wrapper>
   )
 }
@@ -27,7 +47,7 @@ const Wrapper = styled.header`
   z-index: 100;
 `
 
-const NavBar = styled.ul`
+const NavList = styled.ul`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -35,9 +55,17 @@ const NavBar = styled.ul`
 `
 
 const NavItem = styled.li`
-  font-size: 10px;
-  list-style: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  line-height: 18px;
   :not(:last-child) {
     margin-right: 16px;
   }
+`
+
+const Link = styled.a`
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 2px 2px;
 `
