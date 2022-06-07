@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components"
 export const ProfileImages = () => {
   return (
     <Wrapper>
-      <Title>Seiji Yoshino</Title>
+      <Title>SEIJI YOSHINO</Title>
       <ImageWrapper>
         <StaticImage
           formats={["auto", "webp", "avif"]}
@@ -75,6 +75,7 @@ const Title = styled.h1`
   z-index: 11;
   font-size: 32px;
   color: #fff;
+  letter-spacing: 0.3rem;
 
   @media (max-width: 767px) {
     font-size: 2rem;
