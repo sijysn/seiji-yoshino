@@ -2,3 +2,5 @@
 package.json
 package-lock.json
 public
+babel-plugin-macros.config.js
+babel.config.js

@@ -8,7 +8,14 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "gatsby": "^4.14.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "^4.13.1",
     "gatsby-plugin-feed": "^4.14.0",
     "gatsby-plugin-gatsby-cloud": "^4.14.0",
     "gatsby-plugin-google-analytics": "^4.14.0",
@@ -17,6 +24,7 @@
     "gatsby-plugin-offline": "^5.14.1",
     "gatsby-plugin-react-helmet": "^5.14.0",
     "gatsby-plugin-sharp": "^4.14.1",
+    "gatsby-plugin-styled-components": "^5.15.0",
     "gatsby-remark-copy-linked-files": "^5.14.0",
     "gatsby-remark-images": "^6.14.0",
     "gatsby-remark-prismjs": "^6.14.0",
@@ -29,10 +37,12 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.5",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "babel-preset-gatsby": "^2.15.0",
     "prettier": "^2.6.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
