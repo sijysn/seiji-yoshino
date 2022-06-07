@@ -1,17 +1,18 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import { Bio } from "../components/bio"
-import { Layout } from "../components/layout"
-import Seo from "../components/seo"
+import { About } from "../components/About"
+import { Layout } from "../components/Layout"
+import { Seo } from "../components/Seo"
 
 const BlogPostTemplate = ({ data, location }) => {
+  const sectionTitles = data.site.siteMetadata?.sectionTitles
+  const social = data.site.siteMetadata?.social
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} sectionTitles={sectionTitles} social={social}>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -30,9 +31,6 @@ const BlogPostTemplate = ({ data, location }) => {
           itemProp="articleBody"
         />
         <hr />
-        <footer>
-          <Bio />
-        </footer>
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -75,6 +73,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        sectionTitles {
+          title
+          link
+        }
+        social {
+          twitter
+          facebook
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {

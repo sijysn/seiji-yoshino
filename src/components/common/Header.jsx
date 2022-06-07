@@ -2,23 +2,21 @@ import React from "react"
 import styled from "styled-components"
 import { Icon } from "./Icon"
 
-export const Header = () => {
+export const Header = ({ sectionTitles, social }) => {
   return (
     <Wrapper>
       <nav>
         <NavList>
-          <NavItem>
-            <Link href="/#about">ABOUT</Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/#work">WORK</Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/#blog">BLOG</Link>
-          </NavItem>
+          {sectionTitles.map(({ title, link }) => {
+            return (
+              <NavItem key={title}>
+                <Link href={link}>{title}</Link>
+              </NavItem>
+            )
+          })}
           <NavItem>
             <Link
-              href="https://twitter.com/yoshino_seiji"
+              href={social.twitter}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -27,7 +25,7 @@ export const Header = () => {
           </NavItem>
           <NavItem>
             <Link
-              href="https://www.facebook.com/seiji.yoshino.25"
+              href={social.facebook}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -58,8 +56,14 @@ const NavItem = styled.li`
   font-size: 1.1rem;
   letter-spacing: 0.1em;
   line-height: 18px;
+  transition: opacity 0.1s ease-in-out;
+
   :not(:last-child) {
     margin-right: 16px;
+  }
+
+  :hover {
+    opacity: 0.5;
   }
 `
 

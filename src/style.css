@@ -6,11 +6,20 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Noto Serif JP", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN",
     "HGS明朝E", "ＭＳ Ｐ明朝", serif;
-  color: #fff;
-  background-color: #000;
+  color: #000;
+  background-color: #f9f9f9;
+}
+
+.post {
+  display: block;
+}
+
+.post:not(:last-of-type) {
+  margin-bottom: 24px;
 }
