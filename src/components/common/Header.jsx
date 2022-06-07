@@ -53,7 +53,7 @@ const NavList = styled.ul`
 `
 
 const NavItem = styled.li`
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   letter-spacing: 0.1em;
   line-height: 18px;
   transition: opacity 0.1s ease-in-out;
