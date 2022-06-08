@@ -14,7 +14,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} sectionTitles={sectionTitles} social={social}>
-      <Seo title="Home" />
+      <Seo />
       <ProfileImages />
       <About />
       <Blog posts={posts} />
