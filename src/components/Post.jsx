@@ -43,18 +43,22 @@ const Article = styled.article`
   }
 `
 const Title = styled.h2`
-  font-size: 3rem;
+  font-size: 1.8rem;
   margin-bottom: 8px;
   letter-spacing: 2px;
 `
 
 const Date = styled.div`
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: gray;
   margin-bottom: 16px;
 `
 
 const Description = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 0.3rem;
+  line-clamp: 4;
+  overflow: hidden;
+  display: box;
+  box-orient: vertical;
 `
