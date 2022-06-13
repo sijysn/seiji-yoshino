@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 
 import { About } from "../components/About"
@@ -11,6 +11,13 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   const sectionTitles = data.site.siteMetadata?.sectionTitles
   const social = data.site.siteMetadata?.social
+
+  useEffect(() => {
+    if (location.hash) {
+      const target = document.querySelector(location.hash)
+      target.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [location.hash])
 
   return (
     <Layout location={location} sectionTitles={sectionTitles} social={social}>

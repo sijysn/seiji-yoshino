@@ -9,7 +9,7 @@ module.exports = {
     sectionTitles: [
       {
         title: `ABOUT`,
-        link: `/#about`,
+        link: `#about`,
       },
       // {
       //   title: `WORK`,
@@ -17,7 +17,7 @@ module.exports = {
       // },
       {
         title: `BLOG`,
-        link: `/#blog`,
+        link: `#blog`,
       },
     ],
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
@@ -144,5 +144,6 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-smoothscroll`,
   ],
 }

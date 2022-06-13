@@ -1,6 +1,8 @@
-import * as React from "react"
-import { Header } from "./common/Header"
+import React from "react"
 import styled from "styled-components"
+
+import { Header } from "./common/Header"
+// import { ScrollToTop } from "./common/ScrollToTop"
 
 export const Layout = ({ location, sectionTitles, social, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -8,7 +10,12 @@ export const Layout = ({ location, sectionTitles, social, children }) => {
 
   return (
     <>
-      <Header sectionTitles={sectionTitles} social={social} />
+      {/* <ScrollToTop location={location} /> */}
+      <Header
+        sectionTitles={sectionTitles}
+        social={social}
+        location={location}
+      />
       <Content data-is-root-path={isRootPath}>
         <main>{children}</main>
         <Footer>© allrights reserved seiji yoshino</Footer>

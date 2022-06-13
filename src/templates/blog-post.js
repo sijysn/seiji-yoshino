@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
@@ -11,13 +11,20 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const { previous, next } = data
 
+  useEffect(() => {
+    if (location.hash) {
+      const scrollTo = document.querySelector("#post-top")
+      scrollTo.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [location])
+
   return (
     <Layout location={location} sectionTitles={sectionTitles} social={social}>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <Wrapper>
+      <Wrapper id="post-top">
         <article itemScope itemType="http://schema.org/Article">
           <header>
             <Headline itemProp="headline">{post.frontmatter.title}</Headline>
