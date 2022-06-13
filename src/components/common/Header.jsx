@@ -170,7 +170,7 @@ const ButtonLink = styled.button`
 const IconButton = styled.button`
   position: fixed;
   right: 0;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   width: 50px;
   height: 50px;
   border-radius: 50%;
