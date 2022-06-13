@@ -2,15 +2,23 @@ import React from "react"
 import styled from "styled-components"
 
 import { Header } from "./common/Header"
-// import { ScrollToTop } from "./common/ScrollToTop"
+// import { ToggledMenu } from "./common/ToggledMenu"
 
 export const Layout = ({ location, sectionTitles, social, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
+  // const [isOpen, toggleOpen] = useState(true)
+
   return (
     <>
-      {/* <ScrollToTop location={location} /> */}
+      {/* {isOpen && (
+        <ToggledMenu
+          sectionTitles={sectionTitles}
+          social={social}
+          location={location}
+        />
+      )} */}
       <Header
         sectionTitles={sectionTitles}
         social={social}

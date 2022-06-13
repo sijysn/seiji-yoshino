@@ -1,12 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
+import TranstionLink from "gatsby-plugin-transition-link"
 import styled from "styled-components"
 
 export const Post = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
 
   return (
-    <Link to={post.fields.slug} itemProp="url" className="post">
+    <TranstionLink
+      to={post.fields.slug}
+      entry={{
+        appearAfter: 1,
+        length: 1,
+      }}
+      itemProp="url"
+      className="post"
+    >
       <Article itemScope itemType="http://schema.org/Article">
         <header>
           <Title>
@@ -23,7 +31,7 @@ export const Post = ({ post }) => {
           />
         </section>
       </Article>
-    </Link>
+    </TranstionLink>
   )
 }
 
