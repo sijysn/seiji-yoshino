@@ -3,61 +3,98 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import scrollTo from "gatsby-plugin-smoothscroll"
+import TranstionLink from "gatsby-plugin-transition-link"
+import MediaQuery from "react-responsive"
 
 import { Icon } from "./Icon"
 
-export const Header = ({ sectionTitles, social, location }) => {
+export const Header = ({ sectionTitles, social, location, open }) => {
   return (
     <Wrapper>
       <div>
         <Title>
-          <Link to="/">
-            <StaticImage
-              formats={["auto", "webp", "avif"]}
-              src="../../images/gatsby-icon-transparent.png"
-              alt="Profile picture"
-              imgStyle={{
-                width: "48px",
-                height: "48px",
+          {location.pathname === "/" ? (
+            <Link to="/">
+              <StaticImage
+                formats={["auto", "webp", "avif"]}
+                src="../../images/gatsby-icon-transparent.png"
+                alt="Profile picture"
+                imgStyle={{
+                  width: "48px",
+                  height: "48px",
+                }}
+              />
+            </Link>
+          ) : (
+            <TranstionLink
+              to="/"
+              entry={{
+                appearAfter: 1,
+                length: 1,
               }}
-            />
-          </Link>
+            >
+              <StaticImage
+                formats={["auto", "webp", "avif"]}
+                src="../../images/gatsby-icon-transparent.png"
+                alt="Profile picture"
+                imgStyle={{
+                  width: "48px",
+                  height: "48px",
+                }}
+              />
+            </TranstionLink>
+          )}
         </Title>
-        <nav>
-          <NavList>
-            {sectionTitles.map(({ title, link }) => {
-              return (
-                <NavItem key={title}>
-                  {location.pathname === "/" ? (
-                    <ButtonLink onClick={() => scrollTo(link)}>
-                      {title}
-                    </ButtonLink>
-                  ) : (
-                    <Link to={`/${link}`}>{title}</Link>
-                  )}
-                </NavItem>
-              )
-            })}
-            <NavItem>
-              <OuterLink
-                href={social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="fa-brands fa-twitter" />
-              </OuterLink>
-            </NavItem>
-            <NavItem>
-              <OuterLink
-                href={social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="fa-brands fa-facebook" />
-              </OuterLink>
-            </NavItem>
-          </NavList>
-        </nav>
+        <MediaQuery query="(min-width: 768px)">
+          <nav>
+            <NavList>
+              {sectionTitles.map(({ title, link }) => {
+                return (
+                  <NavItem key={title}>
+                    {location.pathname === "/" ? (
+                      <ButtonLink onClick={() => scrollTo(link)}>
+                        {title}
+                      </ButtonLink>
+                    ) : (
+                      <TranstionLink
+                        to={`/${link}`}
+                        entry={{
+                          appearAfter: 1,
+                          length: 1,
+                        }}
+                      >
+                        {title}
+                      </TranstionLink>
+                    )}
+                  </NavItem>
+                )
+              })}
+              <NavItem>
+                <OuterLink
+                  href={social.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon icon="fa-brands fa-twitter" />
+                </OuterLink>
+              </NavItem>
+              <NavItem>
+                <OuterLink
+                  href={social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon icon="fa-brands fa-facebook" />
+                </OuterLink>
+              </NavItem>
+            </NavList>
+          </nav>
+        </MediaQuery>
+        <MediaQuery query="(max-width: 767px)">
+          <IconButton onClick={open}>
+            <Icon icon="fa-solid fa-bars" />
+          </IconButton>
+        </MediaQuery>
       </div>
     </Wrapper>
   )
@@ -128,4 +165,15 @@ const ButtonLink = styled.button`
   width: 100%;
   height: 100%;
   padding: 0 2px 2px;
+`
+
+const IconButton = styled.button`
+  position: fixed;
+  right: 0;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
 `

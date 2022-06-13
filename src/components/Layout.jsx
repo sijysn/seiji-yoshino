@@ -1,28 +1,32 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import { Header } from "./common/Header"
-// import { ToggledMenu } from "./common/ToggledMenu"
+import { ToggledMenu } from "./common/ToggledMenu"
 
 export const Layout = ({ location, sectionTitles, social, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
-  // const [isOpen, toggleOpen] = useState(true)
+  const [isOpen, toggleOpen] = useState(false)
+  const open = () => toggleOpen(true)
+  const close = () => toggleOpen(false)
 
   return (
     <>
-      {/* {isOpen && (
+      {isOpen && (
         <ToggledMenu
           sectionTitles={sectionTitles}
           social={social}
           location={location}
+          close={close}
         />
-      )} */}
+      )}
       <Header
         sectionTitles={sectionTitles}
         social={social}
         location={location}
+        open={open}
       />
       <Content data-is-root-path={isRootPath}>
         <main>{children}</main>
