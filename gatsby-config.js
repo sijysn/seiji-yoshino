@@ -3,9 +3,11 @@ module.exports = {
     title: `Seiji Yoshino（ヨシノセイジ）Official Web Site`,
     author: {
       name: `ヨシノセイジ`,
-      summaryJp: `1998年生まれ Webエンジニア\n早稲田大学社会科学部を卒業。\nカナダでの留学を経て、世界中に自分の手で価値を届けることができるエンジニアに可能性を感じ、\n独学でプログラミングを習得。`,
+      summaryJp: `1998年生まれ Webエンジニア\n早稲田大学社会科学部を卒業。\nカナダでの留学を経て、世界中に、自分の手で価値を届けることができるエンジニアに可能性を感じ、\n独学でプログラミングを習得。`,
       summaryEn: `Born in 1998. A Web developer.\nGraduated from Waseda University with a major in social science.\nThrough my life in Canada, I saw potential in a Web developer,\nwho can deliver value all over the world with my own hands,\nand studyed programming for myself.`,
     },
+    description: `Seiji Yoshino（ヨシノセイジ）のオフィシャルWebサイト`,
+    image: `src/images/gatsby-icon.png`,
     sectionTitles: [
       {
         title: `ABOUT`,

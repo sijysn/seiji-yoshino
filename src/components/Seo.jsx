@@ -17,6 +17,7 @@ export const Seo = ({ description, lang, meta, title }) => {
         site {
           siteMetadata {
             title
+            image
             description
             social {
               twitter
@@ -29,6 +30,7 @@ export const Seo = ({ description, lang, meta, title }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const image = site.siteMetadata?.image
 
   return (
     <Helmet
@@ -54,6 +56,10 @@ export const Seo = ({ description, lang, meta, title }) => {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
         {
           name: `twitter:card`,
