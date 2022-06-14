@@ -7,7 +7,7 @@ module.exports = {
       summaryEn: `Born in 1998. A Web developer.\nGraduated from Waseda University with a major in social science.\nThrough my life in Canada, I saw potential in a Web developer,\nwho can deliver value all over the world with my own hands,\nand studyed programming for myself.`,
     },
     description: `Seiji Yoshino（ヨシノセイジ）のオフィシャルWebサイト`,
-    image: `src/images/gatsby-icon.png`,
+    image: `https://seiji-yoshino.me/src/images/gatsby-icon.png`,
     sectionTitles: [
       {
         title: `ABOUT`,
