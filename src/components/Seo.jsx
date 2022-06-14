@@ -18,7 +18,6 @@ export const Seo = ({ description, lang, meta, title }) => {
         site {
           siteMetadata {
             title
-            image
             description
             siteUrl
             social {
