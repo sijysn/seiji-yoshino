@@ -49,7 +49,7 @@ export const Seo = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: title || defaultTitle,
         },
         {
           property: `og:description`,
@@ -73,7 +73,7 @@ export const Seo = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title || defaultTitle,
         },
         {
           name: `twitter:description`,
