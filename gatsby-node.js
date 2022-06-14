@@ -86,7 +86,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       author: Author
       description: String
-      image: String
       sectionTitles: [SectionTitle]
       siteUrl: String
       social: Social
