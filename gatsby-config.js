@@ -6,7 +6,7 @@ module.exports = {
       summaryJp: `1998年生まれ Webエンジニア\n早稲田大学社会科学部を卒業。\nカナダでの留学を経て、世界中に、自分の手で価値を届けることができるエンジニアに可能性を感じ、\n独学でプログラミングを習得。`,
       summaryEn: `Born in 1998. A Web developer.\nGraduated from Waseda University with a major in social science.\nThrough my life in Canada, I saw potential in a Web developer,\nwho can deliver value all over the world with my own hands,\nand studyed programming for myself.`,
     },
-    description: `Webエンジニア Seiji Yoshino（ヨシノセイジ）の個人サイトです`,
+    description: `Webエンジニア Seiji Yoshino（ヨシノセイジ）の個人サイトです。`,
     sectionTitles: [
       {
         title: `ABOUT`,
@@ -121,7 +121,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Seiji Yoshino（ヨシノセイジ）Official Web Site RSS Feed",
           },
         ],
       },
@@ -129,8 +129,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Seiji Yoshino（ヨシノセイジ）Official Web Site`,
+        short_name: `SY`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
